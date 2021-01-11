@@ -101,7 +101,7 @@ collections:
           name: 'cook-time',
           widget: 'string',
           required: false,
-          pattern: ['^[a-zA-Z0-9]?$', 'Must match "PT40M" or format ...'],
+          pattern: ['^[a-zA-Z0-9]*$', 'Must match "PT40M" or format ...'],
           hint: 'This is used as a time for cooking the food.',
         }
       - {
@@ -109,7 +109,7 @@ collections:
           name: 'prep-time',
           widget: 'string',
           required: false,
-          pattern: ['^[a-zA-Z0-9]?$', 'Must match "PT40M" or format ...'],
+          pattern: ['^[a-zA-Z0-9]*$', 'Must match "PT40M" or format ...'],
           hint: 'This is used as a time for preparing the ingrdients.',
         }
       - { label: 'Cover Image', name: 'cover', widget: 'image', required: false, allow_multiple: false }
