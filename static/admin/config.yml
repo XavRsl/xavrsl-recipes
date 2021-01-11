@@ -79,31 +79,48 @@ collections:
           summary: '{{fields.image}}',
           field: { label: 'Image', name: 'image', widget: 'image' },
         }
-  # - name: 'story_projects'
-  #   # identifier_field: name
-  #   label: 'Story Projects'
-  #   label_singular: 'Story Project'
-  #   folder: 'assets/content/stories'
-  #   create: true
-  #   format: 'json'
-  #   slug: '{{slug}}'
-  #   preview_path: 'stories/{{slug}}'
-  #   # filter: { field: 'project_type', value: 'story' }
-  #   fields:
-  #     # - { label: 'Project Type', name: 'project_type', widget: 'select', options: ['story', 'photo'] }
-  #     - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-  #     - { label: 'Title', name: 'title', widget: 'string' }
-  #     - { label: 'Description', name: 'description', widget: 'string', required: false }
-  #     - { label: 'Content', name: 'body', widget: 'markdown', required: false }
-  #     - { label: 'Cover Image', name: 'cover', widget: 'image', required: false, allow_multiple: false }
-  #     - {
-  #         label: 'Gallery',
-  #         name: 'gallery',
-  #         widget: 'list',
-  #         required: false,
-  #         summary: '{{fields.image}}',
-  #         field: { label: 'Image', name: 'image', widget: 'image' },
-  #       }
+  - name: 'recipes'
+    # identifier_field: name
+    label: 'Recipes'
+    label_singular: 'Recipe'
+    folder: 'assets/content/recipes'
+    create: true
+    format: 'json'
+    slug: '{{slug}}'
+    preview_path: 'recipes/{{slug}}'
+    # filter: { field: 'project_type', value: 'story' }
+    fields:
+      # - { label: 'Project Type', name: 'project_type', widget: 'select', options: ['story', 'photo'] }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Description', name: 'description', widget: 'markdown', required: false }
+      - { label: 'Ingredients', name: 'ingredients', widget: 'markdown', required: false }
+      - { label: 'Instructions', name: 'instructions', widget: 'markdown', required: false }
+      - {
+          label: 'Cooking time',
+          name: 'cook-time',
+          widget: 'string',
+          required: false,
+          pattern: ['^[a-zA-Z0-9]?$', 'Must match "PT40M" or format ...'],
+          hint: 'This is used as a time for cooking the food.',
+        }
+      - {
+          label: 'Preperation time',
+          name: 'prep-time',
+          widget: 'string',
+          required: false,
+          pattern: ['^[a-zA-Z0-9]?$', 'Must match "PT40M" or format ...'],
+          hint: 'This is used as a time for preparing the ingrdients.',
+        }
+      - { label: 'Cover Image', name: 'cover', widget: 'image', required: false, allow_multiple: false }
+      - {
+          label: 'Gallery',
+          name: 'gallery',
+          widget: 'list',
+          required: false,
+          summary: '{{fields.image}}',
+          field: { label: 'Image', name: 'image', widget: 'image' },
+        }
   # - name: 'photo_projects'
   #   # identifier_field: name
   #   label: 'Photo Projects'
